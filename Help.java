@@ -4,12 +4,13 @@ public class Help
 {
 	public static void main(String[] args) 
 	{	
-		while(true)
+		Scanner sc = new Scanner(System.in);
+		String A = null;
+		while(sc.hasnext())
 		{
-			Scanner sc = new Scanner(System.in);
-			System.out.print("C:\\Users\\Administrator>");
-			String A = sc.next();
-		
+			A = sc.hasnext();
+			
+
 			if(A.equals("help"))
 				{
 					System.out.println("有关某个命令的详细信息，请键入 HELP-命令名\n"
@@ -63,11 +64,16 @@ public class Help
 									+"/D 也处理文件夹。\n"
 									+"/L 处理符号链接和符号链接目标的属性。\n");
 				}
+			else if(A == null)
+				{
+					System.out.print("C:\\Users\\Administrator>");
+				}
 			else
 				{
 					System.out.println("\'" + A + "\'" + "不是内部或外部命令，也不是可运行的程序\n"
 					+ "或批处理文件。");
 				}
+				System.out.print("C:\\Users\\Administrator>");
 		}
 	}
 }
